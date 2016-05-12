@@ -14,6 +14,8 @@ Download the [SCS Tile](https://network.pivotal.io/products/p-spring-cloud-servi
 
 Copy the downloaded p-spring-cloud-services-&#42;.zip file into this project directory
 
+Make sure that you're already running PCFDev
+
 `./deploy-local.sh`
 
 ## SSL certificates
@@ -43,4 +45,4 @@ Alternatively, you can modify your /etc/hosts file using a few well-known domain
 * Currently, this project fails to deploy the SCS Service Broker.
 * Utilize the network.pivotal.io download API to download the SCS Tile zip file
 * Automate the generation of the SSL certificates and update to the PCFDev vagrant vm
-* Automate creation of DNS entries required 
+* Automate creation of DNS entries required
