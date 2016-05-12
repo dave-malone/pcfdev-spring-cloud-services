@@ -24,7 +24,7 @@ Spring Cloud Services depends on wildcard certificates for &#42;.uaa and &#42;.l
 &#42;.local.pcfdev.io,&#42;.uaa.local.pcfdev.io,&#42;.login.local.pcfdev.io
 
 SSH into vagrant vm
-  sudo su -
+  ```sudo su -
   cd /var/vcap/jobs/gorouter/config
   mkdir bak
   mv &#42;.pem ./bak
@@ -32,6 +32,7 @@ SSH into vagrant vm
   openssl req -new -key key.pem -out csr.pem
   openssl req -x509 -days 365 -key key.pem -in csr.pem -out certificate.pem
   monit restart gorouter
+  ```
 
 ## DNS
 
