@@ -28,7 +28,7 @@ SSH into vagrant vm
   sudo su -
   cd /var/vcap/jobs/gorouter/config
   mkdir bak
-  mv &#42;.pem ./bak
+  mv *.pem ./bak
   openssl genrsa -out key.pem 2048
   openssl req -new -key key.pem -out csr.pem
   openssl req -x509 -days 365 -key key.pem -in csr.pem -out certificate.pem
