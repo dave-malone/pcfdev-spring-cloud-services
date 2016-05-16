@@ -8,6 +8,8 @@ mkdir -p $SCS_BROKER_RELEASE
 tar -zxvf $SCS_RELEASES/spring-cloud-broker*.tgz -C $SCS_BROKER_RELEASE
 mkdir -p $SCS_BROKER
 tar -zxvf $SCS_BROKER_PACKAGES/spring-cloud-service-broker.tgz -C $SCS_BROKER
+echo '-------------------------------------------------------'
+
 
 cd $SCS_BROKER
 
