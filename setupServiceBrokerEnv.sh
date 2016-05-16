@@ -1,9 +1,9 @@
-# Moving the endpoint and credentials to a separate script 
+# Moving the endpoint and credentials to a separate script
 # so the env variables will override any bundled configurations
-export SECURITY_USER_NAME="template_username"
-export SECURITY_USER_PASSWORD="template_pass"
-export CF_TARGET="template_cf_target"
-export CF_ORG="template_cf_org"
-export CF_SPACE="template_cf_space"
-export CF_USER="template_cf_user"
-export CF_PASSWORD="template_cf_password"
+cf set-env $BROKER_APP_NAME SECURITY_USER_NAME $BROKER_USER_NAME
+cf set-env $BROKER_APP_NAME SECURITY_USER_PASSWORD $BROKER_USER_PASSWORD
+cf set-env $BROKER_APP_NAME CF_TARGET $CF_TARGET
+cf set-env $BROKER_APP_NAME CF_ORG $INSTANCES_ORG
+cf set-env $BROKER_APP_NAME CF_SPACE $INSTANCES_SPACE
+cf set-env $BROKER_APP_NAME CF_USER $INSTANCES_SPACE_USER
+cf set-env $BROKER_APP_NAME CF_PASSWORD $INSTANCES_SPACE_USER_PASSWORD

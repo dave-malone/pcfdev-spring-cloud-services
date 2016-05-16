@@ -13,13 +13,14 @@ cd $SCS_BROKER
 
 echo '-------------------------------------------------------'
 echo '           Config Tile Environment                     '
-source $START_DIR/configureTileEnvironment.sh
+source scripts/configureTileEnvironment.sh
 echo '-------------------------------------------------------'
 echo '            Deploy Broker Worker                       '
 source $START_DIR/deployBrokerWorker.sh
 echo '-------------------------------------------------------'
 echo '           Register Service Broker                     '
-eval $START_DIR/registerServiceBroker.sh
+chmod +x scripts/registerServiceBroker.sh
+eval scripts/registerServiceBroker.sh
 echo '-------------------------------------------------------'
 
 cd $START_DIR

@@ -29,9 +29,9 @@ SSH into vagrant vm
   cd /var/vcap/jobs/gorouter/config
   mkdir bak
   mv *.pem ./bak
-  openssl genrsa -out key.pem 2048
-  openssl req -new -key key.pem -out csr.pem
-  openssl req -x509 -days 365 -key key.pem -in csr.pem -out certificate.pem
+  wget https://gist.githubusercontent.com/dave-malone/c4eb740c96b425098dd3c5f82117b7c4/raw/2d50094c9b502c8b580cf24ab49d9a4ef0e44312/temp.cnf
+  openssl ecparam -genkey -out key.pem -name prime256v1
+  openssl req -x509 -new -key key.pem -out cert.pem -extensions server_req_extensions -config temp.cnf
   monit restart gorouter
   ```
 
@@ -44,7 +44,6 @@ Alternatively, you can modify your /etc/hosts file using a few well-known domain
 
 ## TODO
 
-* Currently, this project fails to deploy the SCS Service Broker.
 * Utilize the network.pivotal.io download API to download the SCS Tile zip file
 * Automate the generation of the SSL certificates and update to the PCFDev vagrant vm
 * Automate creation of DNS entries required
