@@ -18,6 +18,12 @@ Make sure that you're already running PCFDev
 
 `./deploy-local.sh`
 
+
+## Spring Cloud Services
+
+Once SCS Has been deployed, you can access the dashboards via scsbroker.local.pcfdev.io. The default admin user credentials can be used to authenticate.
+
+
 ## SSL certificates
 
 Spring Cloud Services depends on wildcard certificates for &#42;.uaa and &#42;.login domains. By default, PCFDev only comes configured with a wildcard cert for the &#42;.local.pcfdev.io domain. In order to deploy SCS on PCFDev, we need to update the SSL cert, including the wildcard domains required:
