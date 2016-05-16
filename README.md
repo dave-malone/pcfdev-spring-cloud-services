@@ -36,7 +36,7 @@ Alternatively, you can modify your /etc/hosts file using a few well-known domain
 
 For my setup, I added the following entry to my /etc/hosts file:
 
-192.168.11.11   spring-cloud-services.uaa.local.pcfdev.io,spring-cloud-services.login.local.pcfdev.io,login.local.pcfdev.io,uaa.local.pcfdev.io,api.local.pcfdev.io,scsbroker.local.pcfdev.io,doppler.local.pcfdev.io
+`192.168.11.11   spring-cloud-services.uaa.local.pcfdev.io,spring-cloud-services.login.local.pcfdev.io,login.local.pcfdev.io,uaa.local.pcfdev.io,api.local.pcfdev.io,scsbroker.local.pcfdev.io,doppler.local.pcfdev.io`
 
 
 ## Usage
