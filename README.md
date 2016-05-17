@@ -8,6 +8,11 @@ Currently, this project requires you to manually download the SCS Tile from netw
 
 ## Prerequisites
 
+
+By default, the PCFDev VM will only start with up to 4GB of total memory. For use with SCS, it is recommended that you start the VM with at least 8GB of memory:
+
+`VM_MEMORY=8192 ./start-osx`
+
 Openssl client on OSX needs to be updated. These scripts have been tested with openssl 1.0.2h. Instructions on updating can be found here: http://apple.stackexchange.com/questions/126830/how-to-upgrade-openssl-in-os-x
 
 
@@ -52,9 +57,13 @@ Make sure that you're already running PCFDev
 `./deploy-local.sh`
 
 
-## Spring Cloud Services
+## Accessing Spring Cloud Services
 
-Once SCS Has been deployed, you can access the dashboards via scsbroker.local.pcfdev.io. The default admin user credentials can be used to authenticate.
+Once SCS Has been deployed, you can access the dashboards via [](scsbroker.local.pcfdev.io). The default admin user credentials can be used to authenticate.
+
+Services should be visible to all orgs and all spaces in the marketplace:
+
+`cf marketplace`
 
 ## TODO
 
