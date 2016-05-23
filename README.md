@@ -55,6 +55,14 @@ sudo launchctl stop homebrew.mxcl.dnsmasq
 sudo launchctl start homebrew.mxcl.dnsmasq
 ```
 
+Finally, modify the list of DNS Servers used for your current network interface:
+
+```
+networksetup -getdnsservers Wi-Fi
+(output should be something like 192.168.1.1, or whatever DNS servers you're currently using, use this list for the next command)
+sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 192.168.1.1 
+```
+
 ### /etc/hosts entries:
 
 Alternatively, you can modify your /etc/hosts file using a few well-known domain names. The scripts in this project deploy the SCS Service Broker as an app running on Cloud Foundry with a given hostname: scsbroker.local.pcfdev.io. The project also sets up a new Zone in UAA: spring-cloud-services.uaa.local.pcfdev.io and spring-cloud-services.login.local.pcfdev.io. All of this is configurable via the setup.sh script.
