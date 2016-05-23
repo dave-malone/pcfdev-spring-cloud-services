@@ -37,7 +37,6 @@ SSH into vagrant vm
 
 PCFDev uses xip.io in order to redirect all &#42;.local.pcfdev.io requests back to 192.168.11.11. You can either configure a local DNS server to map all &#42;.uaa.local.pcfdev.io and &#42;.login.local.pcfdev.io requests to 192.168.11.11.
 
-Alternatively, you can modify your /etc/hosts file using a few well-known domain names. The scripts in this project deploy the SCS Service Broker as an app running on Cloud Foundry with a given hostname: scsbroker.local.pcfdev.io. The project also sets up a new Zone in UAA: spring-cloud-services.uaa.local.pcfdev.io and spring-cloud-services.login.local.pcfdev.io. All of this is configurable via the setup.sh script.
 
 ### dnsmasq (suggested):
 
@@ -57,6 +56,8 @@ sudo launchctl start homebrew.mxcl.dnsmasq
 ```
 
 ### /etc/hosts entries:
+
+Alternatively, you can modify your /etc/hosts file using a few well-known domain names. The scripts in this project deploy the SCS Service Broker as an app running on Cloud Foundry with a given hostname: scsbroker.local.pcfdev.io. The project also sets up a new Zone in UAA: spring-cloud-services.uaa.local.pcfdev.io and spring-cloud-services.login.local.pcfdev.io. All of this is configurable via the setup.sh script.
 
 `192.168.11.11   spring-cloud-services.uaa.local.pcfdev.io,spring-cloud-services.login.local.pcfdev.io,login.local.pcfdev.io,uaa.local.pcfdev.io,api.local.pcfdev.io,scsbroker.local.pcfdev.io,doppler.local.pcfdev.io`
 
