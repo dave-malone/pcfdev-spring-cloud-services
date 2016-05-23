@@ -39,7 +39,24 @@ PCFDev uses xip.io in order to redirect all &#42;.local.pcfdev.io requests back 
 
 Alternatively, you can modify your /etc/hosts file using a few well-known domain names. The scripts in this project deploy the SCS Service Broker as an app running on Cloud Foundry with a given hostname: scsbroker.local.pcfdev.io. The project also sets up a new Zone in UAA: spring-cloud-services.uaa.local.pcfdev.io and spring-cloud-services.login.local.pcfdev.io. All of this is configurable via the setup.sh script.
 
-For my setup, I added the following entry to my /etc/hosts file:
+### dnsmasq (suggested):
+
+```
+brew update
+brew install dnsmasq
+
+cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
+sudo brew services start dnsmasq
+
+echo "address=/.local.pcfdev.io/192.168.11.11" >> /usr/local/etc/dnsmasq.conf
+echo "address=/.uaa.local.pcfdev.io/192.168.11.11" >> /usr/local/etc/dnsmasq.conf
+echo "address=/.login.local.pcfdev.io/192.168.11.11" >> /usr/local/etc/dnsmasq.conf
+
+sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq
+```
+
+### /etc/hosts entries:
 
 `192.168.11.11   spring-cloud-services.uaa.local.pcfdev.io,spring-cloud-services.login.local.pcfdev.io,login.local.pcfdev.io,uaa.local.pcfdev.io,api.local.pcfdev.io,scsbroker.local.pcfdev.io,doppler.local.pcfdev.io`
 
@@ -69,4 +86,3 @@ Services should be visible to all orgs and all spaces in the marketplace:
 
 * Utilize the network.pivotal.io download API to download the SCS Tile zip file
 * Automate the generation of the SSL certificates and update to the PCFDev vagrant vm
-* Automate creation of DNS entries required
