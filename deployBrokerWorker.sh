@@ -53,3 +53,7 @@ log_debug "Updated app env variable"
 log_debug "Starting app"
 start_app
 log_debug "App started!!"
+
+log_debug "Scaling up the scs broker app"
+cf scale $BROKER_APP_NAME -m 1024M -f
+log_debug "Memory increased for the scs broker"

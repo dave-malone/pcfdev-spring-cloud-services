@@ -19,6 +19,7 @@ export ADMIN_PASSWORD=admin
 export PRODUCT_NAME=spring-cloud-services
 export ADMIN_CLIENT_ID=admin
 export ADMIN_CLIENT_SECRET=admin-client-secret
+
 export BROKER_CLIENT_SECRET=brokersecret
 export WORKER_CLIENT_ID=workerclient
 export WORKER_CLIENT_SECRET=workersecret

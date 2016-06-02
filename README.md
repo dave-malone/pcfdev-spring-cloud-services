@@ -65,6 +65,13 @@ Services should be visible to all orgs and all spaces in the marketplace:
 
 `cf marketplace`
 
+Now you can create service instances for each service:
+```
+cf create-service p-config-server standard myconfig
+cf create-service p-circuit-breaker-dashboard standard mycircuitdashboard
+cf create-service p-service-registry standard myserviceregistry
+```
+
 ## TODO
 
 * Utilize the network.pivotal.io download API to download the SCS Tile zip file
