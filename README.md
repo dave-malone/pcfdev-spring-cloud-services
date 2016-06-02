@@ -28,7 +28,7 @@ SSH into vagrant vm
   mkdir bak
   mv *.pem ./bak
   wget https://gist.githubusercontent.com/dave-malone/c4eb740c96b425098dd3c5f82117b7c4/raw/2d50094c9b502c8b580cf24ab49d9a4ef0e44312/temp.cnf
-  openssl ecparam -genkey -out key.pem -name prime256v1
+  openssl genrsa  -out key.pem 2048
   openssl req -x509 -new -key key.pem -out cert.pem -extensions server_req_extensions -config temp.cnf
   monit restart gorouter
   ```
@@ -60,7 +60,7 @@ Finally, modify the list of DNS Servers used for your current network interface:
 ```
 networksetup -getdnsservers Wi-Fi
 (output should be something like 192.168.1.1, or whatever DNS servers you're currently using, use this list for the next command)
-sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 192.168.1.1 
+sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 192.168.1.1
 ```
 
 ### /etc/hosts entries:
