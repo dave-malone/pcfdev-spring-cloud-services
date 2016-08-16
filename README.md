@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please use the latest version of PCFDev, which now ships with Spring Cloud Services
+
 # Spring Cloud Services for PCFDev
 
 The goal of this project is to allow developers to run Spring Cloud Services on PCFDev.
